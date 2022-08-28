@@ -1,0 +1,44 @@
+plugins {
+    id 'application'
+    id 'idea'
+}
+
+group 'org.wild'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+ext {
+    vertxVersion = '4.2.6'
+    junitJupiterEngineVersion = '5.8.1'
+}
+
+dependencies {
+    implementation "org.ple:immutable-collections"
+    implementation "org.ple:observability-bridge"
+    implementation "org.ple:jerbil"
+
+    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
+    implementation "io.vertx:vertx-rx-java2:$vertxVersion"
+    implementation "io.vertx:vertx-micrometer-metrics:$vertxVersion"
+    implementation "io.vertx:vertx-mysql-client:$vertxVersion"
+    implementation "io.vertx:vertx-shell:$vertxVersion"
+    implementation "io.vertx:vertx-unit:$vertxVersion"
+    implementation "io.vertx:vertx-web:$vertxVersion"
+    implementation "io.vertx:vertx-service-proxy:$vertxVersion"
+    implementation "io.vertx:vertx-sockjs-service-proxy:3.9.1"
+    implementation "ch.qos.logback:logback-classic:1.2.3"
+    implementation "com.couchbase.client:java-client:3.0.5"
+
+    testImplementation "io.vertx:vertx-junit5:$vertxVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterEngineVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'PASSED', 'FAILED', 'SKIPPED'
+    }
+}

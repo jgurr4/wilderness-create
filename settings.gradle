@@ -1,0 +1,4 @@
+rootProject.name = 'wildernessCreate'
+includeBuild '../observability-bridge'
+includeBuild '../immutable-collections'
+includeBuild '../jerbil'

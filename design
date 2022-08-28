@@ -1,0 +1,34 @@
+The design philosophy goes like this:
+
+This app has to be able to work on many servers at the same time. So it will run completely inside docker containers.
+
+Here is the tech stack for it:
+
+visur instead of intellij for editor/ide
+Kubernetes + docker containers/pods
+Java + vertx + jerbil + rebul + observability bridge
+MariaDB service in each pod for persistent data and user accounts
+I think this app would not need Redis or etcd
+frontend is not made until later. I suppose frontend will probably be react + redux + javascript + html + css + SVG or Canvas
+
+
+Steps:
+Step 1: Make Main verticle, and deploy all the required verticles for this app.
+
+Step 2: Make all the required verticles, (with empty bodies) and create the Eventbus.
+
+Step 3: Import jerbil, immutable collections and observability bridge.
+
+Step 4: Build unit tests.
+
+Step 5: Fill all the verticles with required code.
+
+
+
+
+GOAL: I found another goal with my wildernessCreate app:
+I want people to be able to survive as sustainably as possible and with as minimal accessories/tools as possible, and part of the requirement for sustainability is for people to have actual ability to progress through the use of internet, and since internet may not exist, people have to make their own internet, by having a hard drive filled with wikipedia articles and maps and other useful how-to articles to read. They will also need some interface for it that works, a e-ink display is one of the best possible options because out in the wild it takes the least amount of power and can stay on/charged for weeks before needing more power added to it. This is the way people can have access to the internet in the wild. Which is a invaluable resource people almost cannot live without anymore, because it has so much helpful information.  Furthermore if you want to make any progress technologically it can also save you so much time and energy and effort.
+
+The problem with that is in order for it to be considered a sustainable concept, it needs to be able to be built by someone, so my goal is to continue the wilderness create app with a goal of being able to create a low powered display with a minimal OS and a large capacity storage device. Being able to reach that point in the tech tree is what will make it possible for people to repeatedly build and rebuild these types of devices so the knowledge of the internet can stay with us perpetually.
+
+
