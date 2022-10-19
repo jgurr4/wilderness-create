@@ -19,6 +19,7 @@ dependencies {
     implementation "org.ple:observability-bridge"
     implementation "org.ple:jerbil"
 
+    implementation 'org.neo4j.driver:neo4j-java-driver:5.0.0'
     implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.vertx:vertx-rx-java2:$vertxVersion"
     implementation "io.vertx:vertx-micrometer-metrics:$vertxVersion"

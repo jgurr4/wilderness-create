@@ -1,4 +1,4 @@
-package com.independent.wild;
+package com.vitalorg.wild.verticles;
 
 import com.ple.observabilityBridge.SystemOutLogHandler;
 import com.ple.observabilityBridge.RecordingService;
@@ -20,10 +20,10 @@ public class WildernessServerVerticle {
       options.setBlockedThreadCheckInterval(Long.MAX_VALUE >> 2);
     }
 
-    final RecordingService recordingService = RecordingService.make(SystemOutLogHandler.only);
 
     vertx = Vertx.vertx(options);
-    vertx.deployVerticle(new HttpServerVerticle(recordingService.clone()));
+    vertx.deployVerticle(new HttpServerVerticle());
+    vertx.deployVerticle(new Neo4jVerticle());
 //		vertx.deployVerticle(new UserVerticle(recordingService.clone()));
 //		vertx.deployVerticle(new CouchbaseVerticle(recordingService.clone()));
 //		vertx.deployVerticle(new MysqlVerticle(recordingService.clone()));
