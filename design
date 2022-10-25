@@ -32,3 +32,94 @@ I want people to be able to survive as sustainably as possible and with as minim
 The problem with that is in order for it to be considered a sustainable concept, it needs to be able to be built by someone, so my goal is to continue the wilderness create app with a goal of being able to create a low powered display with a minimal OS and a large capacity storage device. Being able to reach that point in the tech tree is what will make it possible for people to repeatedly build and rebuild these types of devices so the knowledge of the internet can stay with us perpetually.
 
 
+categories of nodes:
+technique
+task
+tool
+material
+
+tasks always require technique and/or a source or tool
+example task: grind wheat requires wheat, a grinding tool, and a grinding technique.
+example task 2: filter clay from soil requires soil clay usually a clay filtering tool and a clay filtering technique
+example task 3: obtain water requires a water source and a water retrieval technique.
+example task without a source: count to 10. requires only technique since it is done in your head.
+
+source: a place, person, or thing from which something comes or can be obtained.
+resource: a stock or supply of assets that can be drawn upon by a person or system in order to function effectively.
+In other words, a source is the origin where you can obtain things, and a resource is a store of that thing that you pull from as needed, both are finite, but one is much less finite than the other. Because I can chop wood for hundreds of millions of years before running out, but the amount I store in a shed for use later is dependant on how big my shed is and the amount that I decide to store.
+I don't really like the word source in this context because it doesn't perfectly make sense, but it is the closest word I can think of, because at least it is more accurate than 'material', saying 'wheat material' just means wheat, but a 'wheat source' means either a origin of wheat. But that is not necessarily true either, you could have a source of wheat on a farm, but then after getting the wheat and storing it, your shed is not a source of wheat, but rather contains a resource of wheat. So instead of saying source/resource I'll just say source, and if a task does not involve the origin of a thing, then I'll leave out the word 'source' and just use the name of the material. You can be a source of a material, or you can be a store for resources. So when I say 'you need a source of iron for this task' that source could literally be anything including meteorites that fell down, or recycled tires, or chemically altered elements that turned into iron, literally anything. Actually nevermind, I think I won't use the word 'source' at all, because there is no need. I can just say you need a 'material' if someone needs to get a material from something, then I'll be more specific about the material they need. For example, for the task of 'obtaining clay' there is literally infinite number of ways you can obtain it, but what if I replaced it with 'filtering clay from soil' that is much more specific and makes more sense, because now there is no confusion about source vs resource etc... This is a task that you can complete in order to filter clay from soil in case you have lots of 'soil clay' which is a material of soil mixed with clay.
+So it seems the path I provide people is totally option at all points, as it is meant to be. Just because you can obtain clay by filtering from soil, doesn't mean you have to, maybe you just find someone to source it from. But nevertheless, I'll provide the path and tasks for people to work on, and they can say 'skip' or 'done' to move on to the next task even if they did it an alternative way, I can provide useful alternatives, but I am not going to document all alternatives, that is too much information. So if I have a task that says 'obtain clay' there will be a number of paths the person can take to do so, but we cannot list all the ways and instructions for how to obtain clay, because there is infinite, I could walk down the street and forage for clay on the sidewalk, or I can buy some at a store. What I want to do is only show people the most universal and simple ways of obtaining clay without being dependent on others. So for the task of 'obtain clay' I would provide instructions that say 'complete the filter clay from soil task', but if I do that, I'll end up with multiple tasks for the same exact purpose, which is not useful and that is too much duplication. Instead I'll keep it simpler by saying 'obtain clay from soil' task as a pre-requisite for 'make a clay pot', and inside that task, I'll list the possible techniques, tools and sources for completing it, or maybe I'll just list the techniques and the techniques may list the tools and sources. because doing so will mean people can still choose to skip that task in case they found clay some other way.
+
+So here is a example of that:
+Task: make a clay pot 
+ -> pre-requisite tasks: 
+   - 'filter clay from soil'
+   - 'find a source of water'
+
+Task: filter clay from soil
+ -> pre-requisite tasks:
+   - 'create a 
+
+
+alternative example: (I choose this method.
+Task: make a clay pot 
+  required materials:
+    - clay
+      Task: 'filter clay from soil'
+    - water
+      Task: 'find water source'
+    - grog
+      Task: 'filter sand from soil'
+  Possible techniques: 
+    - coil
+    - puki
+
+Material: clay
+  Tasks:
+    - filter clay from soil (Recommended)
+    - locate termite mound
+    - locate pure source of clay by rivers/streams/lakes
+
+Task: filter clay from soil
+  required materials: 
+    - 'clay soil'
+  Possible techniques:
+    - levigation
+    - soil smashing
+    - sifting
+
+Technique: sifting
+  required tools:
+    - sifter
+      Task: 'make a clay sifter'
+  required materials:
+    - dry soil with loose clay
+      Task: 'digging a hole'
+
+Tool: sifter
+  Tasks:
+    - 'Make a clay sifter' (Recommended)
+    - 'Make a wood sifter'
+
+Task: digging a hole
+  Possible tools:
+    - digging stick (Recommended)
+      Task: 'Make a digging stick'
+    - digging rock
+      Task: 'Make a digging rock'
+    - shovel
+      Task: 'Make a shovel'
+
+As you see in the examples above, I list a task with various requirements in several categories, required tools, required materials, required techniques these make it possible to complete. The recommended task is the most universal one I can think of. Each task may have a list of required techniques, tools and materials, but techniques may also have a list of required tools and materials, and every tool and material also has a task for how to obtain them. This is the way it goes all the way back to the original sources of materials/tools. For example it will always be a task to obtain a material from the source, not a tool/material.
+
+So there are only these categories:
+Task
+Source
+Material
+Tool
+Technique
+
+The root of everything is tasks that obtain materials from sources.
+
+
+As you see in the examples above, the techniques and sources are generic on purpose, that is because it is up to the user to decide what technique or resources to use depending on their circumstances/needs. For example task #3 there are many different sources of water, and many different techniques for retrieval. What I put in this guide are what I call 'recommended' techniques/resources, and 'alternatives'. The recommended techniques/resources are determined based on universality, effectiveness, efficiency, and simplicity but it may be changed often depending on if we learn more about alternative techniques. Which is highly encouraged especially if there is any process/technique/resource that is overly complex/difficult and ineficiant or not as universal as would be optimal.

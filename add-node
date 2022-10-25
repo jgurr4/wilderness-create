@@ -1,0 +1,37 @@
+#!/bin/bash
+# Usage: simply specify the type of node being created and a list of key-value pairs for each property you want it to have.
+# Example: add-node task name 'filter clay from soil' recommended 'true'
+# TODO: Figure out how to make this add relationship at same time as it creates the node
+set -x
+echo "{\"statements\": [{\"statement\": \"CREATE (t:$1 {$2: '$3', $4: '$5'})\"}]}"
+curl -i -H 'Content-Type: application/json'  \
+-u neo4j:bigmac \
+http://localhost:7474/db/data/transaction/commit \
+-d "{\"statements\": [{\"statement\": \"CREATE (t:$1 {$2: '$3', $4: '$5'})\"}]}"
+
+
+# This Worked!!!
+#curl -i -H 'Content-Type: application/json'  \
+#-u neo4j:bigmac \
+#http://localhost:7474/db/data/transaction/commit \
+#-d '{"statements": [{"statement": "CREATE (t:Task {name: \"filter clay from soil\", recommended: \"true\"})"}]}'
+
+# Past failed attempts:
+# This is how to start a transaction:  -u = user:password
+# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx"
+# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx" --data ' { "statements": [ { "statement": "CREATE (n 'Filter clay from soil') RETURN n", "parameters": { "props": { "recommended": "true" "name": "filter clay from soil" " } } }, ] }'
+
+# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx/commit" --data 
+# ' { "statements": 
+# [ 
+# { "statement": "CREATE (t:Task 'Filter clay from soil') RETURN t", "parameters": 
+#   { "props": 
+#     { "recommended": "true" "name": "filter clay from soil" " 
+#     } 
+#     } 
+#   }, 
+#   ] 
+# }'
+# 
+# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx/commit" --data '{"name":"filter clay from soil","recommended":"true"}'
+# 

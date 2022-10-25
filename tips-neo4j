@@ -1,0 +1,22 @@
+NOTE: Only a single database is allowed for community edition of neo4j. You cannot even hack it to add one so don't even try, if you really need multiple you either need to buy enterprise edition, or look for open source alternatives. (Or make a fork of community edition so it allows multiple.)
+
+Delete node by id:
+  match (w) where id(w) = 175
+  detach delete w
+
+Create a relationship:
+MATCH
+  (a:Source),
+  (b:Task)
+WHERE a.name = 'water' AND b.name = 'Make a clay pot' 
+CREATE (b)-[r:REQUIRES]->(a)
+RETURN type(r)
+
+Select *:
+  Match (n) return n
+
+Create a Task:
+  create (pot:Task{name:'Make a clay pot'})-[rel:REQUIRES]->(water:Source{name:'water'}) return pot, water
+
+Create a Source:
+  create (water:Source {name:'water'}) return water
