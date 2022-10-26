@@ -112,14 +112,101 @@ Task: digging a hole
 
 As you see in the examples above, I list a task with various requirements in several categories, required tools, required materials, required techniques these make it possible to complete. The recommended task is the most universal one I can think of. Each task may have a list of required techniques, tools and materials, but techniques may also have a list of required tools and materials, and every tool and material also has a task for how to obtain them. This is the way it goes all the way back to the original sources of materials/tools. For example it will always be a task to obtain a material from the source, not a tool/material.
 
-So there are only these categories:
-Task
-Source
-Material
-Tool
+So there are only these possible relationships:
+Task 		-Requires-> 	material
+Task 		-Requires-> 	tool
+Task 		-Requires-> 	technique
+Source 		-obtained_by-> 	Task
+Source 		-provides-> 	material
+Material  	-obtained_by-> 	Task
+Tool 		-obtained_by-> 	Task
 Technique
+(Might also have -ALT_REQUIRE->)
 
-The root of everything is tasks that obtain materials from sources.
+The root of everything is tasks that obtain sources and further tasks to use materials/tools/techniques made possible by those sources.
+
+Here are all the unique possible labels for each type of node:
+ALL:
+  name: string
+  source: string
+  img: string
+  (OPTIONAL) suited_for: string (could be homesteader, prepper, bugout, minimal, nomad, city, originator)  NOTE: I have to decide if I do this because there is lots of overlap.
+Task:
+  instructions: string
+  recommended: boolean
+Technique:
+  instructions: string
+  recommended: boolean
+Source:
+Material:
+Tool:
+
 
 
 As you see in the examples above, the techniques and sources are generic on purpose, that is because it is up to the user to decide what technique or resources to use depending on their circumstances/needs. For example task #3 there are many different sources of water, and many different techniques for retrieval. What I put in this guide are what I call 'recommended' techniques/resources, and 'alternatives'. The recommended techniques/resources are determined based on universality, effectiveness, efficiency, and simplicity but it may be changed often depending on if we learn more about alternative techniques. Which is highly encouraged especially if there is any process/technique/resource that is overly complex/difficult and ineficiant or not as universal as would be optimal.
+
+
+
+I've got a new idea about nodes and their relationships. I'd be duplicating too many overlapping concepts if I made tools node, and techniques nodes etcd... so instead I'll do this:
+
+Task -UNLOCKS-> Task
+Task -ALTERNATIVE-> Task
+
+Basically every task unlocks another task. Each task provides these labels:
+ - instructions: String
+ - source: URL with instructions/example
+ - img: image for viewing
+
+Examples:
+
+
+Task: Make a bow drill
+ instructions: Using the sharp stone or alt tech, carve a stick into a round point, then ...
+ UNLOCKS: Make a fire
+Task: Make a fire
+ instructions: Using the bow drill blah...
+ COMBINED_WITH: Make a charcoal fire pit
+Task: Make a charcoal fire pit
+ instructions: 'using a digging stick to dig a 4 foot deep and 4 feet wide hole'
+ UNLOCKS: make a charcoal fire
+Task: Make a digging stick
+ instructions: Using the sharp stone or alt tech, carve a stick into a flat edge tip. 
+ PARTIALLY_UNLOCKS: Make a charcoal fire pit
+Task: Make charcoal
+ instructions: Place wood on top of the fire pit, then use bow drill to create fire...
+ COMBINED_WITH: forge
+
+
+Alternatively:
+Tech: bow drill
+ obtaining: Using the sharp stone or alt tech, carve a stick into a round point, then ...
+ UNLOCKS: fire
+Tech: fire
+ obtaining: Using the bow drill blah...
+ COMBINED_WITH: digging stick
+Tech: digging stick
+ obtaining: Using the sharp stone or alt tech, carve a stick into a flat edge tip. 
+ COMBINED_WITH: charcoal fire pit
+Tech: charcoal fire pit
+ obtaining: 'using a digging stick to dig a 4 foot deep and 4 feet wide hole'
+ UNLOCKS: charcoal
+Tech: charcoal
+ obtaining: Place wood on top of the fire pit, then use bow drill to create fire...
+ COMBINED_WITH: forge
+Tech: forge
+ obtaining: Use high clay content mud to ....
+ COMBINED_WITH: iron bacteria
+ COMBINED_WITH: iron sand
+ COMBINED_WITH: iron ore
+Material: iron sand
+ obtaining: Search the wilderness and soil, use a panning method blah...
+ UNLOCKS: iron
+Source: water
+ obtaining: 
+
+Above seems like the simplest method, but there are still some flaws. How to handle multiple ways of obtaining something? Should there be multiple 'obtaining' dimensions? Like obtaining-1 obtaining-2 etc...? Or should we bring back techniques just for this purpose, or maybe something new called 'methods' 
+Method -obtains-> Material/Tech/Source
+
+There will be a Glossary of terms/Terminology page people can find link to in top of the page so they can understand terms like adobe brick etc...
+
+Might add a 'definition' label to each tech.
