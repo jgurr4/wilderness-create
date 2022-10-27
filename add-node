@@ -2,11 +2,12 @@
 # Usage: simply specify the type of node being created and a list of key-value pairs for each property you want it to have.
 # Example: add-node Task name 'filter clay from soil' recommended 'true'
 # TODO: Figure out how to make this add relationship at same time as it creates the node
-# TODO: Figure out how to make this handle 0-inf+ properties/args, using a for loop is most likely to work.
 # TODO: Make it so I don't have to list the keys, I can just list the values, once I've decided what will always be the right keys and values
 set -x
 json="{\"statements\": [{\"statement\": \"CREATE (t:$1 {"
 i=1
+kind=$1
+name=$3
 separator=""
 for v in "$@" 
 do
@@ -25,14 +26,50 @@ do
 done
 json="$json})\"}]}"
 echo $json
-#echo "{\"statements\": [{\"statement\": \"CREATE (t:$1 {$2: '$3', $4: '$5'})\"}]}"
-eval curl -i -H \'Content-Type: application/json\'  \
--u neo4j:bigmac \
-http://localhost:7474/db/data/transaction/commit \
--d "'$json'"
+
+
+# Relationships:
+read -p "Tell the relationship (RELATIONSHIP_TO Material 'some_name' RELATIONSHIP_TO Tech 'some-name' ...): " relationship
+arr=($relationship)
+i=0
+length=${#arr[@]}
+while [[ $i < $((length - 2)) ]]; do
+# jennifer:Person {name: 'Jennifer'}
+#  CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
+  relation=${arr[$i]}
+  relationKind=${arr[$((i+1))]}
+  relationName=${arr[$((i+2))]}
+  relations="CREATE (:$kind {name: $name})-[rel:$relation]->(:$relationKind {name: $relationName})"
+  i=$((i+3))
+done
+
+echo $relations
+echo
+echo -e "$json\n$relations"
+
+# Executing curl command
+#eval curl -i -H \'Content-Type: application/json\'  \
+#-u neo4j:bigmac \
+#http://localhost:7474/db/data/transaction/commit \
+#-d "'$json'"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # This Worked!!!
+#echo "{\"statements\": [{\"statement\": \"CREATE (t:$1 {$2: '$3', $4: '$5'})\"}]}"
+
 #curl -i -H 'Content-Type: application/json'  \
 #-u neo4j:bigmac \
 #http://localhost:7474/db/data/transaction/commit \
