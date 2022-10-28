@@ -1,9 +1,10 @@
 #!/bin/bash
 # Usage: simply specify the type of node being created and a list of key-value pairs for each property you want it to have.
 # Example: add-node Task name 'filter clay from soil' recommended 'true'
-# TODO: Figure out how to make this add relationship at same time as it creates the node
+# TODO: Make it so it can loop through infinite relationships
+# TODO: Make it attach relationships to an existing node if one already exists, otherwise create and attach.
 # TODO: Make it so I don't have to list the keys, I can just list the values, once I've decided what will always be the right keys and values
-set -x
+#set -x
 json="{\"statements\": [{\"statement\": \"CREATE (t:$1 {"
 i=1
 kind=$1
@@ -24,34 +25,39 @@ do
   json="$json$separator$v: "
   separator=""
 done
-json="$json})\"}]}"
-echo $json
+#echo $json
 
 
 # Relationships:
-read -p "Tell the relationship (RELATIONSHIP_TO Material 'some_name' RELATIONSHIP_TO Tech 'some-name' ...): " relationship
-arr=($relationship)
-i=0
-length=${#arr[@]}
-while [[ $i < $((length - 2)) ]]; do
-# jennifer:Person {name: 'Jennifer'}
-#  CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
-  relation=${arr[$i]}
-  relationKind=${arr[$((i+1))]}
-  relationName=${arr[$((i+2))]}
-  relations="CREATE (:$kind {name: $name})-[rel:$relation]->(:$relationKind {name: $relationName})"
-  i=$((i+3))
-done
+read -p "Tell the relationship (RELATIONSHIP_TO Material 'some_name' RELATIONSHIP_TO Tech 'some-name' ...): " words
+if [[ -n "$words" ]]; then
+  json="$json})"
+  eval "arr=($words)"
+  i=0
+  length=${#arr[@]}
+  while [[ $i < $((length - 2)) ]]; do
+  # jennifer:Person {name: 'Jennifer'}
+  #  CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
+    relation=${arr[$i]}
+    relationKind=${arr[$((i+1))]}
+    relationName=${arr[$((i+2))]}
+    relations="-[rel:$relation]->(:$relationKind {name: \\\"$relationName\\\"})\"}]}"
+  #  relations="CREATE (:$kind {name: \\\"$name\\\"})-[rel:$relation]->(:$relationKind {name: \\\"$relationName\\\"})"
+    i=$((i+3))
+  done
+else
+json="$json})\"}]}"
+fi
 
-echo $relations
-echo
-echo -e "$json\n$relations"
+#echo $relations
+#echo
+#echo -e "$json$relations"
 
 # Executing curl command
-#eval curl -i -H \'Content-Type: application/json\'  \
-#-u neo4j:bigmac \
-#http://localhost:7474/db/data/transaction/commit \
-#-d "'$json'"
+eval curl -i -H \'Content-Type: application/json\'  \
+-u neo4j:bigmac \
+http://localhost:7474/db/data/transaction/commit \
+-d "'$json$relations'"
 
 
 
