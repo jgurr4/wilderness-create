@@ -1,0 +1,7 @@
+curl -i -H 'Content-Type: application/json' -u neo4j:bigmac http://localhost:7474/db/data/transaction/commit -d '{"statements": [{"statement": "match (t: Tech{name: \"test\"}) return t"}]}'
+
+
+(FIXED)
+curl -i -H 'Content-Type: application/json' -u neo4j:bigmac http://localhost:7474/db/data/transaction/commit -d '{"statements": [{"statement": "match (m0: Tech{name: \"Digging stick\"})  return m0"}]}'
+
+curl -i -H 'Content-Type: application/json' -u neo4j:bigmac http://localhost:7474/db/data/transaction/commit -d '{"statements": [{"statement": "\nmatch (m0: Tech{name: \'UNLOCKS\'})CREATE (t:Tech {name: \"butter\", recommended: \"no\"})-[:UNLOCKS]->(: {name: \"Digging stick\"})"}]}'

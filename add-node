@@ -1,102 +1,76 @@
 #!/bin/bash
-# Usage: simply specify the type of node being created and a list of key-value pairs for each property you want it to have.
-# Example: add-node Task name 'filter clay from soil' recommended 'true'
+# There are 3 ways to use this script.: 
+# Create a node with as many labels as you want (WORKING) 
+# Create a node with a relationship to existing node (WORKING) 
+# Create a node with as many relationships to as many existing nodes as you want (IN PROGRESS)
+
+# Usage: add-node [[Type] label1 'val1' label2 'val2']
+# hit enter or specify relations: REL relName relType REL relName relType
+# TODO: Make it allow to specify direction of relationship instead of always being 'to' it can be 'from'
+# TODO: Make it attach relationships to an existing node only if one already exists, otherwise create and attach.
 # TODO: Make it so it can loop through infinite relationships
-# TODO: Make it attach relationships to an existing node if one already exists, otherwise create and attach.
-# TODO: Make it so I don't have to list the keys, I can just list the values, once I've decided what will always be the right keys and values
+
 #set -x
-json="{\"statements\": [{\"statement\": \"CREATE (t:$1 {"
-i=1
+if [[ -o "$1" ]]; then 
+  echo "You must have arguments like this example: add-node Task name 'filter clay from soil' recommended 'true'"
+  exit 0
+fi
+pre="{\"statements\": [{\"statement\": \""
+post="\"}]}\""
+match=""
+create="CREATE (t:$1 {" 
+merge=""
 kind=$1
 name=$3
 separator=""
+labels=""
+i=1
 for v in "$@" 
 do
   if [[ $v == $1 ]]; then
     continue
   fi
   if [[ $((i % 2)) == 0 ]]; then
-    json="$json\\\"$v\\\""
+    labels="$labels\\\"$v\\\""
     separator=", "
     i=$((i+1))
     continue
   fi
   i=$((i+1))
-  json="$json$separator$v: "
+  labels="$labels$separator$v: "
   separator=""
 done
-#echo $json
+create="$create$labels"
 
 
 # Relationships:
-read -p "Tell the relationship (RELATIONSHIP_TO Material 'some_name' RELATIONSHIP_TO Tech 'some-name' ...): " words
+read -p "Hit Enter or Tell the relationship (RELATIONSHIP_TO Material 'some_name' RELATIONSHIP_TO Tech 'some-name' ...): " words
 if [[ -n "$words" ]]; then
-  json="$json})"
+  create="$create})"
   eval "arr=($words)"
   i=0
   length=${#arr[@]}
   while [[ $i < $((length - 2)) ]]; do
-  # jennifer:Person {name: 'Jennifer'}
-  #  CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
     relation=${arr[$i]}
-    relationKind=${arr[$((i+1))]}
+    relationType=${arr[$((i+1))]}
     relationName=${arr[$((i+2))]}
-    relations="-[rel:$relation]->(:$relationKind {name: \\\"$relationName\\\"})\"}]}"
-  #  relations="CREATE (:$kind {name: \\\"$name\\\"})-[rel:$relation]->(:$relationKind {name: \\\"$relationName\\\"})"
+    currentMatch="match (m$i:$relationType {name: \\\"$relationName\\\"}) return m$i"
+    match="$match match (m$i:$relationType {name: \\\"$relationName\\\"})"
+    checkExistsOutput=$(eval curl -i -H \'Content-Type: application/json\' -u neo4j:bigmac http://localhost:7474/db/data/transaction/commit -d "'$pre$currentMatch$post'")
+    if [[ $checkExistsOutput == *"\"id\":"* ]]; then
+      relations="-[:$relation]->(m$i)"
+    else
+      echo "node \"$relationName\" does not exist. Create it first, then add the relationship"
+      exit 0
+      # Uncomment this and comment out the above code if you want this script to create relation node if it doesn't exist.
+      # relations="-[:$relation]->(:$relationType {name: \\\"$relationName\\\"})"
+#      create="$create\nCREATE ($i:$relationKind{name: \'$relation\'})"
+    fi
     i=$((i+3))
   done
 else
-json="$json})\"}]}"
+create="$create})"
 fi
 
-#echo $relations
-#echo
-#echo -e "$json$relations"
-
 # Executing curl command
-eval curl -i -H \'Content-Type: application/json\'  \
--u neo4j:bigmac \
-http://localhost:7474/db/data/transaction/commit \
--d "'$json$relations'"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# This Worked!!!
-#echo "{\"statements\": [{\"statement\": \"CREATE (t:$1 {$2: '$3', $4: '$5'})\"}]}"
-
-#curl -i -H 'Content-Type: application/json'  \
-#-u neo4j:bigmac \
-#http://localhost:7474/db/data/transaction/commit \
-#-d '{"statements": [{"statement": "CREATE (t:Task {name: \"filter clay from soil\", recommended: \"true\"})"}]}'
-
-# Past failed attempts:
-# This is how to start a transaction:  -u = user:password
-# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx"
-# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx" --data ' { "statements": [ { "statement": "CREATE (n 'Filter clay from soil') RETURN n", "parameters": { "props": { "recommended": "true" "name": "filter clay from soil" " } } }, ] }'
-
-# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx/commit" --data 
-# ' { "statements": 
-# [ 
-# { "statement": "CREATE (t:Task 'Filter clay from soil') RETURN t", "parameters": 
-#   { "props": 
-#     { "recommended": "true" "name": "filter clay from soil" " 
-#     } 
-#     } 
-#   }, 
-#   ] 
-# }'
-# 
-# curl -vsk -X POST --header 'Content-Type: application/json' -u neo4j:bigmac "http://localhost:7474/db/neo4j/tx/commit" --data '{"name":"filter clay from soil","recommended":"true"}'
-# 
+eval curl -i -H \'Content-Type: application/json\' -u neo4j:bigmac http://localhost:7474/db/data/transaction/commit -d "'$pre$json$match $create$merge$relations$post'"

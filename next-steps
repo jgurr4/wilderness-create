@@ -1,0 +1,40 @@
+Next Steps:
+#1: Learn how to import csv/tsv file into neo4j database. 
+
+Alternatively:
+copy the add-node script and adapt it to work like this:
+add-nodes excel.txt
+Step 1: Copy all the data from excel sheet
+Step 2: Input directly into neo4j
+
+It should read all the data, and create each node all at once. It should also create the relationships correctly as well. So here is how I think the excel sheet should look:
+name	type 	  primary purpose	instructions	image		unlocks	 used_with  by-products   references      fundamentals
+puki    Tech      round clay pots       first ...       blank.png       none     clay 	    none          video url       pottery
+clay	Material  making pottery        do ...          blank.png       puki     none 	    sand	  online article  pottery
+
+TODO: Consider removing 
+- sub_groups
+- used_with 
+- by-products 
+since those are extra unecessary things
+NOTE: I am not sure how neo4j can interpret relationships from above. Hopefully it has some smart way of doing it. Look into that before doing much in excel sheet.
+TODO: Consider replacing instructions with 3 columns of methods i.e. method1, method2, method3. Because it would be nice for people to see alternative ways of obtaining the same thing.
+TODO: Figure out how Techniques, and fundamentals fits into all this.
+TODO: Consider having a 'by_products' field which lists all the possible byproducts produced during the fulfillment of the process outlined in the instructions for this task.
+TODO: Consider having a 'alternatives' field which lists all the possible alternatives for this tech in accomplishing the goal of obtaining the following tech/material.
+TODO: Consider having a node called 'survival-tip' or something similar, which basically gives advice on what a person should do before continuing to pursue technological advancements. These things can give people a break from the tech focus, and let them enjoy life a little more, but also it could focus on a particular need they have. For example, when you're first starting you should only work on getting the tools you need to obtain clean water. Actually maybe just include a node after a specific node. For example after 'water filter' node, say it UNLOCKS 'drinkable water'
+NOTE: Alternative-methods only includes methods that are possible to the individual at time of unlocking that node. Later methods can be utilized as they see fit.
+TODO: Things like 'clean water foraging' and 'rainwater collecting' are tasks that can be accomplished a myriad of ways. Perhaps I can make a new type of node called 'methods' in case someone wants to see all the possible methods for obtaining something at the stage they are at, they could simply add more if they think of any.
+For example: drinkable water, alternative methods: rainwater collecting, method-1: create a large pot and set outside with, method-2: 
+NOTE: People should only create method nodes and add them as alternative methods for the Techs that are extremely crucial.
+
+rough draft:
+Node Types: Materials, Techs
+Materials UNLOCK Techs
+Techs UNLOCK Techs/Materials
+Techs USED_WITH Techs/Materials
+Don't use these:
+# Techs SUBSTITUTE_FOR Techs/Materials
+# Materials SUBSTITUTE_FOR Materials
+
+
