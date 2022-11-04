@@ -2,6 +2,13 @@ Next Steps:
 #1: Complete missing fields of existing list in my excel sheet
 #2: Follow the steps outlined here to import csv file into neo4j: https://community.neo4j.com/t5/neo4j-graph-platform/create-relationship-from-csv-on-existing-nodes/m-p/32326
     - This guide may also help: https://neo4j.com/developer/guide-import-csv/
+#3: After completing the test above successfully, I can take a break from wildernesCreate for a while until I finish with observability-bridge and other stuff.
+#4: When I get back from break: Work on getting first version of tech tree done
+#5: Design the Fundamentals  (the basic building blocks of deep topics like physical exercise, energy production, mathematics, measurement system, knot tying, cooking, first aid, scientific method, self education, documentation/preserving knowledge and wisdom, gardening/foraging/medicinal herbs/plant testing, hunting/trapping, animal husbandry, human psychology etc...)
+#6: Design the life guide  (Family, community, meaning and spirituality)
+#7: Design the principles of freedom guide  (becoming independent from all things and systems, and putting government in it's place)
+#8: Design survival guide
+#9: Share it with the world
 
 Alternatively:
 copy the add-node script and adapt it to work like this:

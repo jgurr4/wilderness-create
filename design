@@ -224,3 +224,14 @@ aquireability levels:
 - likely
 - universal
 
+Explanation of each field in excel:
+name			 
+type			 -What type of node is it, (Might need to be removed from sheet unless I find out how to import this. If so I'll also have to split up the sheet into different sheets based on node-type, which would be pretty simple actually)
+primary purpose		 -The reason you would want to obtain this thing.
+recommended method	 -The method recommended for creating/obtaining this thing. Chosen based on universality, and stuff to learn.
+substitute methods	 -Any methods that exist at this point when the tech is unlocked
+acquirability		 -explaining how likely it is to find this in a 5 square kilometers of land.
+aliases			 -Other names for this thing, common names, technical names etc...
+image	      		 -Image for displaying in the UI.
+references		 -Video url or online articles/wikipedia etc...
+
