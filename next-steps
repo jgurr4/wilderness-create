@@ -1,5 +1,7 @@
 Next Steps:
-#1: Learn how to import csv/tsv file into neo4j database. 
+#1: Complete missing fields of existing list in my excel sheet
+#2: Follow the steps outlined here to import csv file into neo4j: https://community.neo4j.com/t5/neo4j-graph-platform/create-relationship-from-csv-on-existing-nodes/m-p/32326
+    - This guide may also help: https://neo4j.com/developer/guide-import-csv/
 
 Alternatively:
 copy the add-node script and adapt it to work like this:
