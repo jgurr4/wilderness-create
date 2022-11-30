@@ -19,20 +19,20 @@ adobe brick hut - used for -> shelter, workshop, bigger kilns/furnaces/forges
 refined clay - combine with grog and water -> moldable clay
 moldable clay - coil process -> round or flat bottom pots/cups/bowls/containers
 	      - left to dry slowly -> greenware
-kiln - used with greenware pottery -> terracotta
-     - used with terracotta and glaze -> glazed pottery
+kiln - used with greenware -> terracotta
+     - used with terracotta and glaze -> glazed ceramics
 forge - used for -> smelting/forging/melting metal
 water filter - produces -> filtered water
 lye - main ingredient for -> soap
 cement - main ingredient for -> grinding wheel
 wood ash pot - alternative to -> clay pot
-glaze - applied during curing process -> glazed pottery
+glaze - applied during curing process -> glazed ceramics
 terracotta - used for -> plant pot, ouya , evap cooled root cellar, cooling roof tiles, puki, flat slab or cylinder
 puki - used for -> base for more easily making round bottom pots/bowls/cups on turntable surface that also releases the work easily
 flat cylinder - used for -> pottery making on flat and turntable surface.
 flat slab - used for -> food preparation or earthenware work
 ouya - used for -> evaporative cooling drinking bottle, or passive irrigation
-glazed pottery - used for -> food/drink container, cooking pot, insulative roof tiles
+glazed ceramics - used for -> food/drink container, cooking pot, insulative roof tiles
 sweet fruit - Juicing produces -> sweet fruit juice
 sweet fruit juice - left outside -> wine
 wine - distilled -> alcohol
@@ -44,10 +44,11 @@ alcohol - used for -> disinfectant
 animal - hunt and kill -> animal fat, bone, leather, feather, claw, antler/horn and more...
 hard rocks - pecking/knapping process -> stone hammer/axe/adze head, chisel, sharp rocks
 sharp rocks - pecking/knapping process -> stone drill/arrow head, stone cutter
-stone axe - chopping thin branches/trees and shaping wood -> branch mallet, lengths of wood 1-6 in. diameter
-stone drill/arrowhead - drill hole in wood/bark -> firestarter base, 
+celt axe - chopping thin branches/trees and shaping wood -> branch mallet, lengths of wood 1-6 in. diameter
+stone drill/arrowhead - drill hole in wood/bark -> fire sticks, impact fire sticks
 		      - unlocks -> wood pulley, clay sifter, arrow
-firestarter base - unlocks -> fire
+fire sticks - unlocks -> fire
+impact fire sticks
 1-6 in. wood - digging stick making process -> digging stick
 branch mallet - hit blunt end of chisel -> make holes in wood
 stone chisel - chisel hole with branch mallet -> wooden handle, yoke
@@ -58,6 +59,11 @@ plant cordage - combined with handle and hammer/axe/adze head -> axe, hammer, ad
 	      - woven -> basket
 	      - knot tying -> nets, ladders
 basket - used for -> sifting, carrying non-fluid things, trapping
+coil weave basket
+twining weave basket
+drop spindle
+loom
+sandals
 trapping - in water -> crawdads
 antler - tied to handle -> antler pickaxe
 antler pickaxe - used for -> digging through stone
@@ -78,6 +84,27 @@ measuring string - unlocks -> relative measurement system (imperial)
 relative measurement system - used for -> more accurate recording of lengths for use in calculations of dimensions for things you make.
 abacus
 circular ruler
+stick fan
+ceramic bellows
+pump/cord drill
+bow drill
+blow pipe
+burn bowl  === a log that has indentation burned out with coals and airflow, a great place to boil food with rocks.
+wooden tongs
+bow
+arrow
+basket fish trap
+spear
+atlatl
+sling
+drystone wall
+mud wall
+wattle and daub wall
+bark roof
+grass thatch roof
+ondol
+charcoal mound
+charcoal pit
 
 
 
