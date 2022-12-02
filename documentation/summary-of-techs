@@ -103,8 +103,12 @@ wattle and daub wall
 bark roof
 grass thatch roof
 ondol
-charcoal mound
-charcoal pit
+charcoal mound - pyrolysis of wood -> charcoal
+charcoal pit - pyrolysis of wood -> charcoal
+coke making furnace - pyrolysis of charcoal -> coke
+coke  === faster smelting and melting of iron or other metals because it reaches a higher temp. Not really necessary for most applications. 
+
+
 
 
 
@@ -117,3 +121,5 @@ Explanation of all the processes:
 sintering of clay
 sintering of metal:
  - use a clay mold to hold together, 
+Making coke:
+ - You can indirectly make coke by keeping coal/charcoal near the edge of your forge. It's not as dense as the industrial stuff, because it expands more. But I think it should get just as hot. So this is the most simple way to do it. Otherwise if you need it in bulk just pyrolyze charcoal in a oxygen free environment again.
