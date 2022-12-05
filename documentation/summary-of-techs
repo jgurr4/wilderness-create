@@ -3,19 +3,33 @@ SUMMARIZATION OF TECHS AND HOW THEY ARE OBTAINED:
 Most noteworthy things I've learned: All these things do not contain stuff that already requires significant advancement such as 'steam engine' or 'black ink' even if some of these are components for those techs. Also keep in mind I don't mention all the possibilities here, just the ones I know about and the most important for wildernessCreate. There are many more possible things you can do with any of these materials/techs. For full descriptions of each of these steps follow the survival guide.
 RULES: 1: Always provide the node possibilities immediately after they are mentioned by another node. Unless it requires something else, in which case make the node for that other thing first, then do this node.
 
-land - foraging -> hard rocks, fruit, mushrooms, seeds, animals, wood/bark/sticks, plant cordage, kindling, clay soil, beehive
+land - foraging -> hard rocks, trees, mushrooms, animals, trees/wood/bark/sticks, plant cordage, kindling, clay soil, beehive, grain, seeds, nuts, fruit, vegetables, sap, fatwood, shells
+sap - used for -> gluing things in place
+wood/fatwood - gasification process -> tar and wood gas and charcoal  === fatwood provides more tar and wood gas in exchange for less charcoal.
+trees - drill hole with tube placed in it -> sugary water
+sugary water - fermenting process -> wine
+	     - boiled -> syrup
+grain - flour 
+flour - crushed and water added left inside container for 5 days -> sourdough starter
+sourdough starter - added to flour and water -> leavened bread
+		  - small amount added to sweet juice -> wine
 mushroom - used for -> decomposing cellulous to provide food for plants/animals/people
+	 - plant in shady area on decomposing plants -> mushroom farm
+mushroom farm - cut shapes in mycelium -> mycelium foam
+ 	      - provides -> mushrooms
 wood - burned with oxygen produces -> charcoal
      - burned without oxygen produces -> wood ash
-clay soil - main ingredient for -> kiln, forge, furnace, adobe(mud) brick, refined clay
+soil - mixed with water -> mud/adobe
+clay soil - main ingredient for -> kiln, forge, furnace, oven, refined clay
 charcoal - fuel for -> kiln, forge
 	 - Material use for -> water filter
 wood ash - Rinse and strain produces -> lye
 	 - main ingredient for -> cement, wood ash pot 
 	 - mixed with clay and water -> wood ash glaze
 	 - used for -> cleaning without soap technique
-adobe(mud) brick - main component of -> adobe brick hut
-adobe brick hut - used for -> shelter, workshop, bigger kilns/furnaces/forges
+adobe/mud - mixed with water and formed into -> furnaces and temporary shelters/workshops
+rammed earth -
+cob -
 refined clay - combine with grog and water -> moldable clay
 moldable clay - coil process -> round or flat bottom pots/cups/bowls/containers
 	      - left to dry slowly -> greenware
@@ -28,13 +42,16 @@ cement - main ingredient for -> grinding wheel
 wood ash pot - alternative to -> clay pot
 glaze - applied during curing process -> glazed ceramics
 terracotta - used for -> plant pot, ouya , evap cooled root cellar, cooling roof tiles, puki, flat slab or cylinder
+	   - crushing produces -> grog
 puki - used for -> base for more easily making round bottom pots/bowls/cups on turntable surface that also releases the work easily
-flat cylinder - used for -> pottery making on flat and turntable surface.
+flat cylinder - used for -> pottery making on flat and turntable surface
+pottery wheel - used for -> more efficient and comfortable pottery making
 flat slab - used for -> food preparation or earthenware work
 ouya - used for -> evaporative cooling drinking bottle, or passive irrigation
+brick mold - used for -> forming adobe/mud/clay bricks
 glazed ceramics - used for -> food/drink container, cooking pot, insulative roof tiles
-sweet fruit - Juicing produces -> sweet fruit juice
-sweet fruit juice - left outside -> wine
+sweet fruit - Juicing produces -> sweet juice
+sweet juice - left for 1 day or add sourdough starter, then ferment in closed container for 2-3 weeks -> wine
 wine - distilled -> alcohol
      - left outside -> vinegar
 vinegar - cooked with vegetables -> speeds up softening process and makes more bioavailable for some foods like corn, potatoes, carrots, onions, etc... 
@@ -49,7 +66,7 @@ stone drill/arrowhead - drill hole in wood/bark -> fire sticks, impact fire stic
 		      - unlocks -> wood pulley, clay sifter, arrow
 fire sticks - unlocks -> fire
 impact fire sticks
-1-6 in. wood - digging stick making process -> digging stick
+wood - digging stick making process -> digging stick
 branch mallet - hit blunt end of chisel -> make holes in wood
 stone chisel - chisel hole with branch mallet -> wooden handle, yoke
 stone cutter - making grooves in wood, cutting/chopping plants -> plant strings/vines
@@ -84,7 +101,8 @@ measuring string - unlocks -> relative measurement system (imperial)
 relative measurement system - used for -> more accurate recording of lengths for use in calculations of dimensions for things you make.
 abacus
 circular ruler
-stick fan
+stick fan - combined with ceramic air funnel -> ceramic bellows
+ceramic air funnel - combined with stick fan -> ceramic bellows
 ceramic bellows
 pump/cord drill
 bow drill
@@ -98,21 +116,21 @@ spear
 atlatl
 sling
 drystone wall
-mud wall
+adobe/mud wall
 wattle and daub wall
 bark roof
 grass thatch roof
-ondol
+ondol  === A tunnel underneath a home which has a fire started at one end, and a exit chimney at the other end. This heats the home efficiently, while preventing possible flame inside the home itself.
 charcoal mound - pyrolysis of wood -> charcoal
 charcoal pit - pyrolysis of wood -> charcoal
 coke making furnace - pyrolysis of charcoal -> coke
-coke  === faster smelting and melting of iron or other metals because it reaches a higher temp. Not really necessary for most applications. 
-
-
-
-
-
-
+coke  === Cleaner burn and faster smelting and melting of iron or other metals because it reaches a higher temp. Not really necessary for most applications. 
+weight scale - used for -> Measuring weight of items
+shells or calcium carbonate rocks - heated in a fire -> lime
+lime - mixed with water -> slaked lime
+slaked lime - mixed with sand or crushed teracotta (1 part grog: 2.5 part lime puty ratio) -> roman concrete
+roman concrete - alternative to -> clay
+	       - used for -> mortar between bricks
 
 
 
@@ -120,6 +138,15 @@ coke  === faster smelting and melting of iron or other metals because it reaches
 Explanation of all the processes:
 sintering of clay
 sintering of metal:
- - use a clay mold to hold together, 
+ - use a clay mold to hold pieces of metal together while heating it as hot as possible.
 Making coke:
  - You can indirectly make coke by keeping coal/charcoal near the edge of your forge. It's not as dense as the industrial stuff, because it expands more. But I think it should get just as hot. So this is the most simple way to do it. Otherwise if you need it in bulk just pyrolyze charcoal in a oxygen free environment again.
+ - You can make bulk amounts of coke by placing charcoal inside a thin clay container with a loose lid, and surrounding it in a fireplace, it will release tar at 1000 deg f. Usually takes 1.5 hours to completely release, you'll be able to tell by checking to see if any more smoke is coming from the charcoal inside the container. Coke burns hotter because the tar and other impurities are burned out of it, These impurities get in the way of the airflow and the combustion process for charcoal.
+Smelting/melting metal:
+ - The best way to melt metal is to either melt it inside a thin walled clay pot, or to have the flames hitting the metal directly by using a draft furnace, while the metal sits on top of a or drain which has a mold underneath to catch the metal and allow it to form the rough shape you want. Then use blacksmithing techniques from there to further shape/grind/sharpen/harden it.
+Foraging technique:
+ - The best way to forage if looking for exotic things is to travel as much distance in the shortest amount of time by hiking or marathon running in the wilderness. Make sure you keep a keen eye out for certain things, it also helps if you know or heard of people spotting certain materials in the area you're heading. For example you might come across obsidian while hiking a trail. Just be careful of snakes, scorpions, mountain lions, bears, and other dangerous wildlife that might end your trip quickly.
+Making adobe/mud/clay walls:
+ - If using mud/adobe, you should mix with straw or dung and form into bricks. If using clay, simply form into bricks. then stack the bricks on top of each other with mortar. The mortar can be the same material the bricks are made from.
+Making slaked lime - Easiest to use a mortar and pestle with small amount of water, just crush the shells into the water.
+Making a 
