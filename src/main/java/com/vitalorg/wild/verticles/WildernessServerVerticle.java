@@ -2,8 +2,8 @@ package com.vitalorg.wild.verticles;
 
 import com.ple.observabilityBridge.SystemOutLogHandler;
 import com.ple.observabilityBridge.RecordingService;
-import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
+import io.vertx.reactivex.core.Vertx;
 
 public class WildernessServerVerticle {
 
