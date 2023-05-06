@@ -1,0 +1,34 @@
+How to properly add nodes and how it will work in the tech tree
+
+
+Question:
+I am trying to create a graph database filled with nodes. Each node represents a technology such as antler pickaxe, wood gasifier etc... Many techs will unlock other techs, either on their own or combined with some previously unlocked tech. I want to come up with a labeling system that lets my graph database map out the fastest path to a specific tech goal based on these results and show all the techs including the combinations of techs required to unlock each successive tech until the goal is reached. Can you describe a good labeling system for this purpose?
+
+ChatGPT's Answer: 
+A good labeling system for your graph database could be a combination of three types of labels:
+
+    Technology Labels: Each node in the graph database would have a label that represents the technology it represents, such as "Antler Pickaxe" or "Wood Gasifier". These labels would allow you to easily identify the technologies in the graph.
+
+    Unlocking Labels: Each edge in the graph would have a label that represents the technology required to unlock the next technology. For example, an edge from "Antler Pickaxe" to "Stone Pickaxe" might have a label of "Stone". An edge from "Wood Gasifier" to "Charcoal Kiln" might have a label of "Fire". These labels would allow you to easily see the requirements for unlocking each technology.
+
+    Progress Labels: Each node in the graph would also have a label that represents the progress towards the goal technology. For example, if your goal technology was "Electricity", each node in the graph could have a label that represents the number of technologies you need to unlock before reaching "Electricity". The starting node would have a label of "0", and each successive node would have a label one higher than the previous node. These labels would allow you to easily identify the fastest path to your goal technology.
+
+Using these three types of labels, you could easily map out the fastest path to your goal technology and show all the technologies and combinations of technologies required to unlock each successive technology until the goal is reached. You could also use this labeling system to generate recommendations for which technologies to focus on next based on the user's current progress towards the goal technology.
+
+
+
+
+
+
+In summary:
+ technology, unlocking and progress labels will be part of each node
+
+
+Other
+I will add as many labels as possible to each node. That way we can easily point out patterns and commonalities between certain tech branches.
+
+Dynamic labels = changes based on user progress
+Static labels = same no matter what
+Generated labels = usually incremented labels like Progress label mentioned above. This is generated automatically based on the list of techs I've created in a document and all the unlocking edges
+
+

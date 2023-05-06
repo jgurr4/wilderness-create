@@ -1,0 +1,61 @@
+How I will compile knowledge (light) from now on
+
+My focus is on making sure I can always remember where to look when I need to check my notes about some topic, whether it be cooking related, or blacksmithing etc...
+
+The WildernessCreate app will pull from the compiled details when needing to see how something is done or researching a specific topic. I don't go into more details than the basics, but I advise people to use AI or google for their questions, and I also link to other youtube channels who can provide more helpful tips and tricks
+
+So here is how I compile everything. I put it all on one single document which is very large, but it has a table of contents that auto-updates with a script. It is in yaml syntax. So here is an example of a topic:
+
+Topics: [
+  Topic_1_Foraging:
+    - Plant fibers:
+      - Fine Fibers, candidates for textiles (cloth, fabric etc...)
+      - Thick Fibers, candidates for crafts (rope, baskets etc...)
+  Topic_1_Gardening:
+    - Science:
+    - How-to: []
+  Topic_2_Cooking:
+    - Science:
+    - How-to: [
+      1_flour_based_food:
+	- wheat_flour: "grinding wheat Tut_102"
+	- bread: 
+	    dough-type: "yeast dough Tut_33"
+	    yeast: "make yeast Tut_36"
+	    loaf: "make bread Tut_35"
+	    helpful: "Ask gpt 'why does bread rise?' or 'is flatbread simply bread that didn't have yeast, please give me a recipe for flat bread'"
+	- noodles:
+	    dough-type: "basic dough Tut_32"
+	    spaghetti: "flatten dough then cut Tut_134"
+	    flat: "flatten dough then cut Tut_13"
+      ]
+  Topic_3_Recycling:
+      - Science:
+      - How-to: []
+]
+Tutorials: [
+  Tut_1:
+   - Making_Stone_Axehead: [
+      step_1: "Find a stone that is a good candidate. Look for sandstone, obsidian, flint, etc... If you don't know, just grab a rock that is close to the shape you want, and test what happens when you try knapping it, or grinding it against another stone in the water. If the stone shapes easily but is not too brittle, it will be a good candidate"
+      step_2: "Decide on a method. You can use knapping, pecking or grinding or a combination of the three. If you have advanced tools you may use cutting, drilling or chiseling"
+      step_3: "After shaping into the style of axe head you are satisfied with, It is ready to use directly in your hands to chop some branches and small trees. If you want to take this to the next level see Tut_2_Making_Stone_Axe"
+      techniques: 
+       - knapping: "Simply take the rock and hit it with another rock hard enough to shard off chunks of rock"
+       - pecking: "Take a pointed rock and peck the surface of another rock repeatedly"
+       - grinding: "Place a smooth or rough stone with large surface area in water, then take your candidate stone and grind against the surface continuously. The water is necessary as without it, the rock dust would float in the air and get stuck in your lungs"
+     ]
+  Tut_2:
+   - 
+
+]
+
+
+This above syntax being yaml means it will be easy to use yq + jq to parse through it at any time and pull out just the fields people or programs may want to see. And that also makes it easy to convert into data for any other type of database or storage format. 
+My main purpose for making it like this though is because I want to be able to do grep or vim searches more easily, so I can go to the 'Cooking' or search through each 'Topic' until I find the topic I want, then dive deeper inside each 'sub_category' until I find the right one I am looking for.
+
+I am only adding the things I'm interested in. We'll add more stuff over time since it is a living document. But people can fork it at any point as well and make their own specialized version.
+
+I want to hopefully develop as many meaningful and efficient pattern categorizations to add to the document for each category, so that it can be easier for us to wrap our heads around certain topics. For example, to describe the meaning behind fibers make it clear what it's possibilities are and what distinguishes it for this use. For example, abouve I showed the possibilities for fine Fibers (useful in textiles), vs Thick fibers (useful in crafts)
+ I also know that everything we destroy becomes our life sustenance, (nutrients we consume become part of our body and sustain us). It's the same for every living thing. Every living thing must destroy something to make it consumable and become part of it. For example plants must break into the soil and break down dissolved or undissolved solids and absorb them into itself. 
+ I also know that wood ash has magical properties as well, but I don't know what category yet to put these properties in. There is almost nothing like it that comes to mind, but once I find out what other things relate to these properties, it should be possible for me to come up with a name for it similar to the name I gave to fine fibers and thick fibers.
+ Seeds are a example of life with a set of intensely magical properties. Also animal fat, beeswax, certain metals (for their ability to disinfect and purify things), also vinegar and similar acids, wine for it's ability to disenfect, clay pots for their ability to refridgerate through evaporation. I'll keep adding to this list, because I think this list alone is actually very useful for people to know about. These are the magical life artifacts of our world.

@@ -95,3 +95,27 @@ const TechTree = () => {
             });
           });
           session.close
+        });
+        nodeElements.push(group);
+
+        canvas.add(group);
+        canvas.add(label);
+        canvas.add(circle);
+
+      }
+      const edgeElements = [];
+      for (const id in edges) {
+        const edge = edges[id];
+        const line = new fabric.Line([
+          nodes[edge.source].x,
+          nodes[edge.source].y,
+          nodes[edge.target].x,
+          nodes[edge.target].y,
+        ], {
+          stroke: '#000000',
+          strokeWidth: 2,
+          selectable: false,
+        });
+        edgeElements.push(line);
+        canvas.add(line);
+      }

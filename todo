@@ -1,4 +1,7 @@
 Next Steps:
+#-1: Actually experiment with 'unlocks'  and 'required_by' in neo4j to determine what the possible problems would be in the resulting tech tree. 
+#0: Decide if I would rather have a tech tree that uses `unlocks` instead of `required_by`. The benefit of required_by is it is simpler, because it means I won't have to predetermine which techs/skills are the final step in unlocking a specific Tech/Skill. I think I will do that after all, it seems to tricky to try and do unlocks
+#1: Make a excel sheet that has all the techs and edges. Each one will be used to generate the necessary neo4j queries.
 #1: Complete missing fields of existing list in my excel sheet
 #2: Follow the steps outlined here to import csv file into neo4j: https://community.neo4j.com/t5/neo4j-graph-platform/create-relationship-from-csv-on-existing-nodes/m-p/32326
     - This guide may also help: https://neo4j.com/developer/guide-import-csv/
