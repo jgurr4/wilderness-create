@@ -7,3 +7,18 @@ Basket
  definition: A basket is a container made of woven plant fibers that may or may not have space to allow stuff to fall through it
 
 
+Unlock Relation Columns:
+ - Tech or Skill: 
+ - Type: Specify if Tech or Skill
+ - Unlocks: Every item that is unlocked should be specific. For example instead of saying 'stone knapping' unlocks 'chisels, axe head, adze head', you would instead say 'stone knapping' unlocks 'stone chisel, stone axe head, stone adze head, etc...' because the end result is going to be that this unlocks relationship connects to those specific nodes to show progress. Not to the generic parent of those nodes. In other words you specify the variations
+
+Tech Nodes Columns:
+ - Tech: Every item is a concept, a generic idea of something, and which has many variations in reality. For example a Axe head is a generic idea, and it can have many shapes and be made from many different materials. 
+ - Material Variations: Example for Axe Head: Stone, Metal
+ - Style Variations: Example for Axe Head: Broad Axe, Wood Cutters Axe, etc...
+ - Crafting Instructions: Example for Axe Head: For stone you want to find right shape stone then knap and grind the stone into shape. For metal you want to forge or cast it. (These instructions are very general on purpose, and we also do not mention materials that are impractical even if possible, we only focus on the most useful and viable broadly applicable materials and styles, people can be endlessly creative from there if they want, and they can fork this repo and make their own custom one as well. That is a main purpose of this too, because someone may be in the art industry so they want more flair and fantasy style tools, so they might want to make a glass or ceramic axe head. There will be many purpose driven WildernessCreate tech trees, many of which will remove most of the unecessary stuff from this list, and keep only very niche things that have to be unlocked depending on someones goals and circumstances)
+
+Skill Nodes Columns:
+ - Skill: Example: Stone Masonry
+ - Sub-Skills: Example for Stone Masonry: Stone grinding / Polishing, Stone Knapping ...
+ - Variations: Example for recyling: plastic, metal, glass
