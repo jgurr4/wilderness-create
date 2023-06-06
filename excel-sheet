@@ -7,7 +7,7 @@ Basket
  definition: A basket is a container made of woven plant fibers that may or may not have space to allow stuff to fall through it
 
 
-Unlock Relation Columns:
+Unlock Relation Columns: (DEPRECATED: replaced by ordered Tech / skill nodes)
  - Tech or Skill: 
  - Type: Specify if Tech or Skill
  - Unlocks: Every item that is unlocked should be specific. For example instead of saying 'stone knapping' unlocks 'chisels, axe head, adze head', you would instead say 'stone knapping' unlocks 'stone chisel, stone axe head, stone adze head, etc...' because the end result is going to be that this unlocks relationship connects to those specific nodes to show progress. Not to the generic parent of those nodes. In other words you specify the variations
@@ -16,9 +16,46 @@ Tech Nodes Columns:
  - Tech: Every item is a concept, a generic idea of something, and which has many variations in reality. For example a Axe head is a generic idea, and it can have many shapes and be made from many different materials. 
  - Material Variations: Example for Axe Head: Stone, Metal
  - Style Variations: Example for Axe Head: Broad Axe, Wood Cutters Axe, etc...
+ - Alternatives: Any tech that can be used instead for a specific place in the tech tree. (only applies if both have been unlocked by the user)
  - Crafting Instructions: Example for Axe Head: For stone you want to find right shape stone then knap and grind the stone into shape. For metal you want to forge or cast it. (These instructions are very general on purpose, and we also do not mention materials that are impractical even if possible, we only focus on the most useful and viable broadly applicable materials and styles, people can be endlessly creative from there if they want, and they can fork this repo and make their own custom one as well. That is a main purpose of this too, because someone may be in the art industry so they want more flair and fantasy style tools, so they might want to make a glass or ceramic axe head. There will be many purpose driven WildernessCreate tech trees, many of which will remove most of the unecessary stuff from this list, and keep only very niche things that have to be unlocked depending on someones goals and circumstances)
 
 Skill Nodes Columns:
  - Skill: Example: Stone Masonry
  - Sub-Skills: Example for Stone Masonry: Stone grinding / Polishing, Stone Knapping ...
  - Variations: Example for recyling: plastic, metal, glass
+
+Alternatives Columns:
+ - Tech or Skill: 
+ - Type: Specify if Tech or Skill
+ - Alternative_to: Specify which tech or skill this can replace
+ - Alternative_for: Specify which tech or skill this unlocks when used to replace another tech
+
+
+I'll keep using unlocks. Here is how I can make it work:
+ - If a item has multiple unlock ingredients that do not unlock each other, then they will all be parallel related to the next node. My program will only check to make sure all of those required nodes was successfully completed. Otherwise successive unlocks will happen successively just like they all do. Most required ingredients will be accomplished earlier in the tech tree before getting to the tech anyway, so in most cases there is just one successive tech or skill required to unlock something. But in the case that happens, that means we just make them all 'unlock' the tech, but my program will require them all to be completed, not just one or another.
+ - One potential problem with this idea: what if some tech can be unlocked by alternative techs? 
+   ANSWER: I don't think this will happen, I already give flexibility in the form of 'variations' so if you need a different style of propeller to make a vacuum pump, you can do that. Plus, if a person does actually find a alternative they can replace the tech in their own tech tree, if they prefer their version more. It is also possible to include their techs by having 'alternatives' which are alternative unlock techs for a specific tech / skill. 
+   If this all fails, I would fall back to just getting rid of any 'unlocks' or 'required_by' and just replace it with 'before' because it's all my arbitrary choices at that point. But I'm hoping I won't have to do that.
+
+
+This is my new goal: 
+
+
+I'm starting to think that letting the graph have 'unlocks' and other stuff is overcomplicating things. I should just design my tech tree with whatever arbitrary order I want, then let other people design their trees with whatever order they want, as long as the order is technically possible. We cannot actually know for sure what is possible anyway without much much more testing, and even then, someone with enough ingenuity can find ways to make something possible we might have thought was impossible, sure we could just update the tech tree every time this happens. But it would actually be much less work, and much less complaints, because it might be too much to promise a tech tree that ensures it works exactly with the things that are perfectly unlockable only in a certain order. Instead what I can do is design a tech tree with all the nodes I can possibly think of to make progress in as expedient a way as possible
+
+Here is my new idea:
+ - If there is a tech with multiple variations and alternatives, then the user can click on the node to choose the specific variation or alternative tech they want to do there based on their preference and situation. For example: Axe Head / Adze Head : stone / bone / wood / metal
+  The user would click the node and choose 'Axe' and 'Stone' for example.
+
+My tech tree, which is the default will be called 'Expedient and Minimal Balance' Because it's goal is to reach all the way to Computers and beyond in shortest amount of time possible, but it also takes advantage of simple, minimalistic, and universally applicable / possible things for people no matter where they live. 
+
+I have saved a diagram which is a basic illustration of how I plan for the tech tree to work. Basically techs are the main nodes, and each tech unlocks the next successive techs, but a specific tech might have alternative techs so all alternatives will be encapsulated in a category based on purpose. For example: adze and axe are the first tree trunk and branch chopping implements you can make by hand in the wild. Each tech requires some skill / techniques, so those will be listed beside each tech node in diamond shape / yellow color to distinguish them from tech nodes. Users can choose to remove all skill nodes if they want the tree to be less cluttered.
+
+ Material Variations are only what is feasible at that stage. If you already have a advanced version of a tech like a steel axe instead of stone, then you can just say 'complete' on the axe at that stage, no need to specify the material variation
+
+Green Cell is where I left off when trying to order the techs
+
+Next steps: 
+ Keep ordering techs and specifying instructions as well as required skills
+ Add all the skill nodes
+ Once you have made it to Bronze or Iron Age stuff, you can make your prototype in the fronend UI and integrate my excel sheet information into the Database for use in the Java Backend of the app. I'll have to figure out how to allow users to edit the tech tree, and interact with it, and make progress on it.
