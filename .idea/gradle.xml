@@ -25,8 +25,12 @@
             </builds>
           </compositeBuild>
         </compositeConfiguration>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/8.2.1/libexec" />
+        <option name="gradleJvm" value="corretto-1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../immutable-collections" />
