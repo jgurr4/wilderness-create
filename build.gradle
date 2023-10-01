@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 ext {
-    vertxVersion = '4.2.6'
+    vertxVersion = '4.4.5'
     junitJupiterEngineVersion = '5.8.1'
 }
 
@@ -20,8 +20,8 @@ dependencies {
     implementation "org.ple:jerbil"
 
     implementation 'org.neo4j.driver:neo4j-java-driver:5.0.0'
-    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
-    implementation "io.vertx:vertx-rx-java2:$vertxVersion"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.8"
+    implementation "io.vertx:vertx-rx-java3:$vertxVersion"
     implementation "io.vertx:vertx-micrometer-metrics:$vertxVersion"
     implementation "io.vertx:vertx-mysql-client:$vertxVersion"
     implementation "io.vertx:vertx-shell:$vertxVersion"
