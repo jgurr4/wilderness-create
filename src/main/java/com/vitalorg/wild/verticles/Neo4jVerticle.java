@@ -15,7 +15,7 @@ public class Neo4jVerticle extends AbstractVerticle {
 
     public Completable rxStart(String uri, String user, String password) {
         Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
-	return vertx;
+	return null;
     }
 
 }

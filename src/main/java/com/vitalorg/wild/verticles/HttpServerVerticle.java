@@ -2,28 +2,27 @@ package com.vitalorg.wild.verticles;
 
 //import com.ple.observabilityBridge.ObservabilityContext;
 //import com.ple.observabilityBridge.RecordingService;
-import com.ple.util.IArrayMap;
 import com.ple.util.Nullable;
 import com.vitalorg.wild.BusEvent;
-import io.reactivex.Completable;
-import io.reactivex.Single;
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.http.HttpServer;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Single;
+import io.vertx.rxjava3.core.AbstractVerticle;
+import io.vertx.rxjava3.core.eventbus.EventBus;
+import io.vertx.rxjava3.core.http.HttpServer;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
-import io.vertx.reactivex.core.MultiMap;
-import io.vertx.reactivex.core.http.HttpServerRequest;
-import io.vertx.reactivex.core.http.HttpServerResponse;
-import io.vertx.reactivex.ext.web.Router;
-import io.vertx.reactivex.ext.web.RoutingContext;
-import io.vertx.reactivex.ext.web.Session;
-import io.vertx.reactivex.ext.web.handler.BodyHandler;
-import io.vertx.reactivex.ext.web.handler.SessionHandler;
-import io.vertx.reactivex.ext.web.handler.sockjs.SockJSHandler;
-import io.vertx.reactivex.ext.web.sstore.LocalSessionStore;
-import io.vertx.reactivex.ext.web.sstore.SessionStore;
+import io.vertx.rxjava3.core.MultiMap;
+import io.vertx.rxjava3.core.http.HttpServerRequest;
+import io.vertx.rxjava3.core.http.HttpServerResponse;
+import io.vertx.rxjava3.ext.web.Router;
+import io.vertx.rxjava3.ext.web.RoutingContext;
+import io.vertx.rxjava3.ext.web.Session;
+import io.vertx.rxjava3.ext.web.handler.BodyHandler;
+import io.vertx.rxjava3.ext.web.handler.SessionHandler;
+import io.vertx.rxjava3.ext.web.handler.sockjs.SockJSHandler;
+import io.vertx.rxjava3.ext.web.sstore.LocalSessionStore;
+import io.vertx.rxjava3.ext.web.sstore.SessionStore;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -124,7 +123,7 @@ public class HttpServerVerticle extends AbstractVerticle {
     try {
       response.setChunked(true);
       Session session = context.session();
-      String username = session.get(SessionKey.username.name());
+      String username = session.get("myUsername");
       if (username != null && path.equals("/static/login.html") || username != null && path.equals("/static/jscrawl.html")) {
         WebUtils.redirect(response, "/static/jscrawl.html");
         return;
@@ -166,7 +165,7 @@ public class HttpServerVerticle extends AbstractVerticle {
               R.debug("html = " + html);
 */
                 } else if (redirect.equals("jscrawl.html")) {
-                  session.put(SessionKey.username.name(), object.getString("username"));
+                  session.put("myUsername", object.getString("username"));
                 }
                 WebUtils.redirect(response, "/static/" + redirect);
               },

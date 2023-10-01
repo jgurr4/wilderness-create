@@ -1,0 +1,19 @@
+Using Java completely inside vim terminal without any IDE:
+ PROBLEMS:
+  gradle build | head   ## And other variations don't work. It outputs all output because of how gradle seems to parrallelize it's work with bash.
+
+TIPS and TRICKS: see all methods of a class:
+TODO: THIS STILL DOESN'T WORK: Find out how to do this:
+ javap -cp class-file.class packagename.classname
+ example java builtin:
+ javap java.lang.StringBuffer
+
+ Example dependency:
+ cd ~/.gradle/caches/; find . -name *.jar
+ javap -cp ~/.gradle/caches/ io.vertx.rxjava3.core.AbstractVerticle
+
+NOTE: This requires gradle build to have worked one time before you can generate the jar file
+source: https://stackoverflow.com/questions/5266532/can-i-get-all-methods-of-a-class
+
+We need to show all the 
+
