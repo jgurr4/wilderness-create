@@ -17,7 +17,7 @@ ext {
 dependencies {
     implementation "org.ple:immutable-collections"
     implementation "org.ple:observability-bridge"
-    implementation "org.ple:jerbil"
+//    implementation "org.ple:jerbil"
 
     implementation 'org.neo4j.driver:neo4j-java-driver:5.0.0'
     implementation "io.reactivex.rxjava3:rxjava:3.1.8"

@@ -17,24 +17,15 @@
                   <project path="$PROJECT_DIR$/../immutable-collections" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/../jerbil" name="jerbil">
-                <projects>
-                  <project path="$PROJECT_DIR$/../jerbil" />
-                </projects>
-              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="/usr/local/Cellar/gradle/8.2.1/libexec" />
         <option name="gradleJvm" value="corretto-1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../immutable-collections" />
-            <option value="$PROJECT_DIR$/../jerbil" />
             <option value="$PROJECT_DIR$/../observability-bridge" />
             <option value="$PROJECT_DIR$" />
           </set>
